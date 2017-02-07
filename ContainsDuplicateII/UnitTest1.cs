@@ -19,6 +19,8 @@ namespace ContainsDuplicateII
     {
         public static bool ContainsNearbyDuplicate(int[] nums, int k)
         {
+            if (k == 0) return false;
+
             throw new NotImplementedException();
         }
     }
