@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Collections.Generic;
 
 namespace ContainsDuplicateII
 {
@@ -28,6 +29,12 @@ namespace ContainsDuplicateII
         public static bool ContainsNearbyDuplicate(int[] nums, int k)
         {
             if (k == 0) return false;
+
+            var set = new HashSet<int>();
+            for (int i = 0; i < nums.Length; i++)
+            {
+                if (set.Add(nums[i])) return true;
+            }
 
             throw new NotImplementedException();
         }
