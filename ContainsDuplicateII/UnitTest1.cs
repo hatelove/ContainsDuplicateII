@@ -44,7 +44,7 @@ namespace ContainsDuplicateII
                 if (!set.Add(nums[i])) return true;
             }
 
-            throw new NotImplementedException();
+            return false;
         }
     }
 }
