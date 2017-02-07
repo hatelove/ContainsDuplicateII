@@ -62,6 +62,14 @@ namespace ContainsDuplicateII
             var k = 2;
             Assert.IsFalse(Solution.ContainsNearbyDuplicate(nums, k));
         }
+
+        [TestMethod]
+        public void Test_nums_9_5_6_9_4_4_9_and_k_is_3_should_return_true()
+        {
+            var nums = new int[] {9, 5, 6, 4, 9, 4, 4, 9};
+            var k = 3;
+            Assert.IsTrue(Solution.ContainsNearbyDuplicate(nums, k));
+        }
     }
 
     public static class Solution
