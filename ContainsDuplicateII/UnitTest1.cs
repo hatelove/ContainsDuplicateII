@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ContainsDuplicateII
 {
@@ -46,10 +46,15 @@ namespace ContainsDuplicateII
         {
             if (k == 0) return false;
 
-            var set = new HashSet<int>();
+            var windowSize = k + 1;
             for (int i = 0; i < nums.Length; i++)
             {
-                if (!set.Add(nums[i])) return true;
+                var windowNums = nums.Skip(i).Take(windowSize);
+                var set = new HashSet<int>();
+                foreach (var windowNum in windowNums)
+                {
+                    if (!set.Add(windowNum)) return true;
+                }
             }
 
             return false;
