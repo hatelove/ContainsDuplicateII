@@ -1,6 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace ContainsDuplicateII
 {
@@ -66,7 +65,7 @@ namespace ContainsDuplicateII
         [TestMethod]
         public void Test_nums_9_5_6_9_4_4_9_and_k_is_3_should_return_true()
         {
-            var nums = new int[] {9, 5, 6, 4, 9, 4, 4, 9};
+            var nums = new int[] { 9, 5, 6, 4, 9, 4, 4, 9 };
             var k = 3;
             Assert.IsTrue(Solution.ContainsNearbyDuplicate(nums, k));
         }
@@ -78,15 +77,13 @@ namespace ContainsDuplicateII
         {
             if (k == 0) return false;
 
-            var windowSize = k + 1;
+            var set = new HashSet<int>();
             for (int i = 0; i < nums.Length; i++)
             {
-                var windowNums = nums.Skip(i).Take(windowSize);
-                var set = new HashSet<int>();
-                foreach (var windowNum in windowNums)
-                {
-                    if (!set.Add(windowNum)) return true;
-                }
+                if (!set.Add(nums[i])) return true;
+
+                //keep only 1 window sliding, remove int just out of window
+                if (i >= k) set.Remove(nums[i - k]);
             }
 
             return false;
