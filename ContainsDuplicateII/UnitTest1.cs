@@ -7,7 +7,7 @@ namespace ContainsDuplicateII
     public class UnitTest1
     {
         [TestMethod]
-        public void Test_distance_is_zero_should_return_false()
+        public void Test_k_is_zero_should_return_false()
         {
             var numbers = new int[] { 1, 2, 3, 1, 2 };
             var k = 0;
