@@ -11,7 +11,7 @@ namespace ContainsDuplicateII
         {
             var nums = new int[] { 1, 2, 3, 1, 2 };
             var k = 0;
-            Assert.IsFalse(Solution.ContainsNearbyDuplicate(nums, k));
+            Assert.IsFalse(Solution.ContainsNeaxxxxxxxxxxrbyDuplicate(nums, k));
         }
 
         [TestMethod]
