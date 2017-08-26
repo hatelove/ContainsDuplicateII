@@ -10,7 +10,7 @@ namespace ContainsDuplicateII
         public void Test_k_is_zero_should_return_false()
         {
             var nums = new int[] { 1, 2, 3, 1, 2 };
-            var k = 0;
+            var k = 1;
             Assert.IsFalse(Solution.ContainsNearbyDuplicate(nums, k));
         }
 
